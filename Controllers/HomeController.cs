@@ -24,13 +24,33 @@ namespace demo_mvc.Controllers
         [Route("pagina-inicial")]
         public IActionResult Index(string id, string categoria)
         {
+            var filme = new Filme(){
+                Titulo = "oi",
+                Datalancamento = DateTime.Now,
+                Genero = "",
+                Avaliacao = 6,
+                Id = 1,
+                Valor = 20000,
+            };
+
+            // return RedirectToAction("Privacy", filme);
+
             return View();
         }
 
         [Route("privacidade")]
         [Route("politica-de-privacidade")]
-        public IActionResult Privacy()
+        public IActionResult Privacy(Filme filme)
         {
+            if(ModelState.IsValid){
+
+            }
+
+            foreach (var error in ModelState.Values.SelectMany(m=>m.Errors))
+            {
+                Console.WriteLine(error.ErrorMessage);
+            }
+
             // return Json("{'nome':'Gabriel'}");
             // var fileBytes = System.IO.File.ReadAllBytes("/home/gabriel/Documentos/aquecimento.csv");
             // var fileName = "arquivo.txt";
