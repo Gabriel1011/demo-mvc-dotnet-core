@@ -26,7 +26,7 @@ namespace demo_mvc.Controllers
         {
             var filme = new Filme(){
                 Titulo = "oi",
-                Datalancamento = DateTime.Now,
+                DataLancamento = DateTime.Now,
                 Genero = "",
                 Avaliacao = 6,
                 Id = 1,
